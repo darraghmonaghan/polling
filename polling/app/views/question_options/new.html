@@ -2,7 +2,7 @@
 
             <%= form_for @options do |f| %> 
             <div class="form-group">
-              <%= f.email_field :option, placeholder: 'option 1', class: "form-control", required: true %>
+              <%= f.text_field :option, placeholder: 'option 1', class: "form-control", required: true %>
             </div>
-            <%= f.submit "Signup!", class: "ghost-button" %>
+            <%= f.submit "Submit your Options!", class: "ghost-button" %>
             <% end %>
