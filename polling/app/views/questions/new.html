@@ -1,0 +1,10 @@
+<h1>New Question Submit Form</h1>
+
+        <%= form_for @question do |f| %> 
+            <div class="form-group">
+              	<%= f.fields_for :question do | question_form | %>
+              		<%= f.text_field :content, placeholder: 'Question Content', class: "form-control", required: true %>
+              		<% end %><br>
+              	<%= f.submit 'Post Questions', class: 'ghost-button' %>
+        <% end %>
+

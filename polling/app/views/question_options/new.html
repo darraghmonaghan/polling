@@ -1,0 +1,8 @@
+<h1>List of possible answers for question</h1>
+
+            <%= form_for @options do |f| %> 
+            <div class="form-group">
+              <%= f.email_field :option, placeholder: 'option 1', class: "form-control", required: true %>
+            </div>
+            <%= f.submit "Signup!", class: "ghost-button" %>
+            <% end %>

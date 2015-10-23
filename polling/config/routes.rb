@@ -19,6 +19,12 @@ Rails.application.routes.draw do
 
   delete '/questions/:id', to: 'questions#delete'
 
+  ##### QUESTION OPTIONS ######
+
+  get '/options/new', to: 'question_options#new', as: 'new_question_options'
+
+  post '/options', to: 'question_options#create', as: 'question_options'
+
   ##### USERS ######
 
   get "/users", to: 'users#index' 
