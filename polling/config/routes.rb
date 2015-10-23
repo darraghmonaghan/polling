@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   post '/users', to: 'users#create'
 
-  get '/users/:id', to: 'users#show'
+  get '/users/:id', to: 'users#show', as: 'users_profile'
 
   get '/users/:id/edit', to: 'users#edit'
 
@@ -38,11 +38,11 @@ Rails.application.routes.draw do
 
   ##### SESSIONS ######
 
-  get '/sessions/new'
+  get '/sessions', to: 'sessions#new'
 
-  post '/sessions/create'
+  post '/sessions', to: 'sessions#create'
 
-  delete '/sessions', to: 'sessiosn#destroy'
+  delete '/sessions', to: 'sessions#destroy'
 
 
 

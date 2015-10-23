@@ -1,17 +1,17 @@
 class SessionsController < ApplicationController
 
   def new
-  	@user = User.new
+    @user = User.new
   end
 
   def create
     @user = User.confirm(params)
     if @user
       login(@user)
-      redirect_to users_path(@user.id)
+      redirect_to users_profile_path(@user.id)
     else
-      # flash[:danger] = "It failed!"
-      redirect_to sessions_new_path
+      flash[:danger] = "It failed!"
+      redirect_to sessions_path
     end
   end
 

@@ -1,6 +1,6 @@
 <h1>Sign In</h1>
 
-<%= form_tag sessions_create_path, method: :post do %>
+<%= form_tag sessions_path, method: :post do %>
 
 	       <div class="form-group">
             <%= text_field_tag :email, nil, required: true, placeholder: "email", class: "users-new-input" %>
