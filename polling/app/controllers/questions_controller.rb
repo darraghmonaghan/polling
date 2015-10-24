@@ -11,7 +11,8 @@ class QuestionsController < ApplicationController
 
 	def create
 		@question = Question.create(question_params)
-		# @question = QuestionOption.create(answer_option_params)
+		@question_options = QuestionOption.create(answer_option_params)
+		@question_options.question_id = @question.id
 		redirect_to new_question_options_path
 	end
 
@@ -22,9 +23,9 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:content)
   end
 
-  # def answer_option_params
-  #   params.require(:question_option).permit(:option)
-  # end
+  def answer_option_params
+    params.require(:question_option).permit(:option)
+  end
 
 
 end

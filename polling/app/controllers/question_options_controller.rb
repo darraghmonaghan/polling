@@ -1,11 +1,11 @@
 class QuestionOptionsController < ApplicationController
 
 	def new
-		@options = QuestionOption.new
+		@answer_options = QuestionOption.new
 	end
 
 	def create
-		@option = QuestionOption.create(option_params)
+		@answer_options = QuestionOption.create(option_params)
 		redirect_to root_path
 	end
 
