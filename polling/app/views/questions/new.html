@@ -1,13 +1,7 @@
 <h1>New Question Submit Form</h1>
 
-
-
-
 <%= form_for @question do |f| %>
-  <%= f.text_field :content %>
-  <%= f.fields_for @answer_options do |builder| %>
-    <%= builder.text_field :option %>
-  <% end %>
+  <%= f.text_field :content, placeholder: 'Question Title'  %>
+  <%= f.text_field :option[], placeholder: 'Answer Option 1 (optional)' %>
   <%= f.submit %>
 <% end %>
-

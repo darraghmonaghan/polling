@@ -6,6 +6,8 @@ class Question < ActiveRecord::Base
 
 	accepts_nested_attributes_for :question_option
 
+
+
 	# def self.fancy_create params
 	# 	option_params = params[:question_option]
 	# 	params.delete(:question_option)

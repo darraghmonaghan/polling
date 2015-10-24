@@ -20,11 +20,11 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:content)
+    params.require(:question).permit(:content, :option[])
   end
 
   def answer_option_params
-    params.require(:question_option).permit(:option)
+    params.require(:question_option).permit(:option[])
   end
 
 
