@@ -4,8 +4,7 @@ class Question < ActiveRecord::Base
 	has_many :user_input # plural!!!
 	has_many :question_option #plural!!!!
 
-	accepts_nested_attributes_for :question_option
-
+	accepts_nested_attributes_for :question_option, :reject_if => lambda { |a| a[:content].blank? }, :allow_destroy => true
 
 
 	# def self.fancy_create params

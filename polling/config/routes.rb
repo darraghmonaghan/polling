@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   get '/questions/new', to: 'questions#new'
 
-  post '/questions', to: 'questions#create'
+  post '/questions', to: 'questions#create', as: "create_questions"
 
   get '/questions/:id', to: 'questions#show'
 

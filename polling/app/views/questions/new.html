@@ -1,7 +1,20 @@
 <h1>New Question Submit Form</h1>
 
-<%= form_for @question do |f| %>
-  <%= f.text_field :content, placeholder: 'Question Title'  %>
-  <%= f.text_field :option[], placeholder: 'Answer Option 1 (optional)' %>
-  <%= f.submit %>
+<%= form_for @question, url: {action: 'create'} do |f| %>
+
+	<%= f.fields_for :question do |builder| %>
+	 
+	  <div class="field">
+	    <%= builder.text_field :content, placeholder: 'Question Title' %>
+	  </div>
+	<% end %>
+	<%= f.fields_for :question_option do |builder| %>
+	 
+	  <div class="field">
+	    <%= builder.text_field :option, placeholder: 'Answer Option (optional)' %>
+	   	<%= builder.check_box :_destroy %>
+	   	<%= builder.label :_destroy, 'Remove' %>
+	  </div>
+	<% end %>
+	<%= f.submit %>
 <% end %>
