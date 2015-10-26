@@ -2,13 +2,13 @@
 
 <%= form_for @question, url: {action: 'create'} do |f| %>
 
-	<%= f.fields_for :question do |builder| %>
+	<%#= f.fields_for :question do |builder| %>
 	 
 	  <div class="field">
-	    <%= builder.text_field :content, placeholder: 'Question Title' %>
+	    <%= f.text_field :content, placeholder: 'Question Title' %>
 	  </div>
-	<% end %>
-	<%= f.fields_for :question_option do |builder| %>
+	<%# end %>
+	<%= f.fields_for :question_options do |builder| %>
 	 
 	  <div class="field">
 	    <%= builder.text_field :option, placeholder: 'Answer Option (optional)' %>

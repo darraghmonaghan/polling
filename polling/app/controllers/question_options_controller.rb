@@ -6,15 +6,14 @@ class QuestionOptionsController < ApplicationController
 
 	def create
 		@answer_options = QuestionOption.create(option_params)
+		puts @answer_options
 		redirect_to root_path
 	end
-
-
 
   private
 
   def option_params
-    params.require(:question_option).permit(:option)  
+    params.require(:question_option).permit(:option, :_destroy)  
   end
 
 
