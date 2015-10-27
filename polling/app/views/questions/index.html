@@ -1,7 +1,12 @@
 <h1>test test</h1>
 
-<h3>Big list of questions here.....</h3>
-
 <%= @questions.each do |q| %>
-<p><%= q %></p>
+<div class='question_post'>
+	<h3><%= q.content %></h4>
+	<p><%= q.created_at %></p>
+	<p><% q.question_options.each do |o| %>
+		<ul><li><%= o.option %></li>
+		</ul>
+		<% end %>
+</div><br>
 <% end %>
