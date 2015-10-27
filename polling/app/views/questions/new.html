@@ -1,20 +1,26 @@
+<%= render "partials/navbar" %>
+
 <h1>New Question Submit Form</h1>
 
-<%= form_for @question, url: {action: 'create'} do |f| %>
 
-	<%#= f.fields_for :question do |builder| %>
-	 
-	  <div class="field">
-	    <%= f.text_field :content, placeholder: 'Question Title' %>
+<div class='container'>
+	<div class="row">
+	  <div class="col-md-4"></div>
+	  <div class="col-md-4">
+			<%= form_for @question, url: {action: 'create'} do |f| %>				 
+				  <div class="field">
+				    <%= f.text_field :content, placeholder: 'Question Title' %>
+				  </div>
+				<%= f.fields_for :question_options do |builder| %>
+				  <div class="field">
+				    <%= builder.text_field :option, placeholder: 'Answer Option (optional)' %>
+				   	<%= builder.check_box :_destroy %>
+				   	<%= builder.label :_destroy, 'Remove' %>
+				  </div>
+				<% end %>
+				<%= f.submit %>
+			<% end %>
 	  </div>
-	<%# end %>
-	<%= f.fields_for :question_options do |builder| %>
-	 
-	  <div class="field">
-	    <%= builder.text_field :option, placeholder: 'Answer Option (optional)' %>
-	   	<%= builder.check_box :_destroy %>
-	   	<%= builder.label :_destroy, 'Remove' %>
-	  </div>
-	<% end %>
-	<%= f.submit %>
-<% end %>
+	  <div class="col-md-4"></div>
+	</div>
+</div>

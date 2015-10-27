@@ -1,14 +1,17 @@
 class QuestionsController < ApplicationController
 
 	def index
-		questions = Question.all
-		@questions = []
-		questions.each do |q|
-			if q.content
-				@questions.push(q)
-			end
-		end
-		# byebug
+		@questions = Question.all
+		# @questions = []
+		# questions.each do |q|
+		# 	if q.content
+		# 		@questions.push(q)
+		# 	end
+		# end
+	end
+
+	def show
+		@question = Question.find(params[:id])
 	end
 
 	def new
@@ -22,7 +25,7 @@ class QuestionsController < ApplicationController
 	def create
 		# byebug
 		@question = Question.create(question_params)
-		puts @question
+		# puts @question
 
 
 		# question_option = @question.question_option.build

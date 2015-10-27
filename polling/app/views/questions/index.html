@@ -1,12 +1,27 @@
-<h1>test test</h1>
+<%= render "partials/navbar" %>
 
-<%= @questions.each do |q| %>
-<div class='question_post'>
-	<h3><%= q.content %></h4>
-	<p><%= q.created_at %></p>
-	<p><% q.question_options.each do |o| %>
-		<ul><li><%= o.option %></li>
-		</ul>
-		<% end %>
-</div><br>
-<% end %>
+
+<div class='container'>
+	<div class="row">
+	  <div class="col-md-4"></div>
+	  <div class="col-md-4">
+	  	<%= @questions.each do |q| %>
+	  		<h3><a href='/questions/<%= q.id %>'><%= q.content %></a></h3>
+			<p><%= time_ago_in_words(q.created_at) %></p>
+			<ul><% q.question_options.each do |o| %>
+			
+				<li><%= o.option %><button class="btn btn-default" type="button">Vote!</button></li>
+
+				<% end %></ul>
+			<% end %>
+	  </div>
+	  <div class="col-md-4"></div>
+	</div>
+</div>
+
+
+
+<%= render "partials/footer" %>
+
+
+

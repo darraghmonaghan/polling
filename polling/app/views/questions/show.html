@@ -1,0 +1,21 @@
+<h1>Question Show Page</h1>
+
+<%= render "partials/navbar" %>
+
+<div class='container'>
+	<div class="row">
+	  <div class="col-md-4"></div>
+	  <div class="col-md-4">
+			<h5><%= @question.content %></h5>
+			<p><% @question.question_options.each do |o| %>
+				<ul><li><%= o.option %><button class="btn btn-default" type="button">Vote!</button></li></ul>
+				<% end %>
+
+	  </div>
+	  <div class="col-md-4"></div>
+	</div>
+</div>
+
+
+
+<%= render "partials/footer" %>
