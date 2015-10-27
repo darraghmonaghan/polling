@@ -10,10 +10,16 @@ class QuestionOptionsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def upvote 
+		  @question_option = QuestionOption.find(params[:format])
+		  @question_option.upvote_by current_user
+		  redirect_to :back
+	end 
+
   private
 
   def option_params
-    params.require(:question_option).permit(:option, :_destroy)  
+    params.require(:question_option).permit(:id, :option, :_destroy)  
   end
 
 

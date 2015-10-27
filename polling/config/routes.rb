@@ -25,6 +25,16 @@ Rails.application.routes.draw do
 
   post '/options', to: 'question_options#create', as: 'question_options'
 
+  put '/like', to: "question_options#upvote", as: 'upvote'
+
+  # resources :links do 
+  #   member do
+  #     put "like", to: "links#upvote"
+  #     # put "dislike", to: "links#downvote"
+  #   end
+  # end
+
+
   ##### USERS ######
 
   get "/users", to: 'users#index' 
@@ -49,6 +59,9 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
 
   delete '/sessions', to: 'sessions#destroy'
+
+
+  ##### SESSIONS ######
 
 
 

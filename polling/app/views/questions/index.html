@@ -10,9 +10,16 @@
 			<p><%= time_ago_in_words(q.created_at) %></p>
 			<ul><% q.question_options.each do |o| %>
 			
-				<li><%= o.option %><button class="btn btn-default" type="button">Vote!</button></li>
+				<li>
+					<%= o.option %><br>
 
-				<% end %></ul>
+					<span class='badge'><%= o.get_upvotes.size %></span>
+					<%= button_to upvote_path(o), method: :put do %>
+
+					<% end %>					
+				</li>
+				<% end %>
+			</ul>
 			<% end %>
 	  </div>
 	  <div class="col-md-4"></div>
