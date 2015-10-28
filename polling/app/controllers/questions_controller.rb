@@ -2,12 +2,6 @@ class QuestionsController < ApplicationController
 
 	def index
 		@questions = Question.all
-		# @questions = []
-		# questions.each do |q|
-		# 	if q.content
-		# 		@questions.push(q)
-		# 	end
-		# end
 	end
 
 	def show
@@ -33,33 +27,20 @@ class QuestionsController < ApplicationController
 	end
 
 	def create
-		@question = Question.create(question_params)
-		@user = current_user
-		@question.user = User.find(current_user.id)
-		# puts @question
+		@question = Question.create(question_params)  # works fine
 		if @question.save
 			redirect_to root_path			
 		else
 			render :create
 		end
-		# question_option = @question.question_option.build
-		# @question_options = QuestionOption.create(answer_option_params)
-		# @question_options.question_id = @question.id
-
 	end
 
 	private
 
 	  def question_params
-		params.require(:question).permit(:content, question_options_attributes: [:option, :_destroy])
-	    # params.require(:question).permit(question_attributes:[question_attributes: [:content], question_option_attributes: [:option, :_destroy]])
-	  	# params.require(:question).permit!
-	  	# params.require(:question_option).permit(:content, :question_option, :option, :_destroy)
+		params.require(:question).permit(:content, :user_id, question_options_attributes: [:option, :_destroy])
 	  end
 
-	  # def question_option_params
-	  #   params.require(:question).permit(:option)
-	  # end
 
 end
 
