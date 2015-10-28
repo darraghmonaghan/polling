@@ -6,25 +6,29 @@
     <div class="col-md-4">
         <h1 class='title'>New User Sign Up</h1><br>
             <%= form_for @user do |f| %> 
-            <div class="form-group">
-              <%= f.email_field :email, placeholder: 'Email', class: "form-control", required: true %>
-            </div>
-            <div class="form-group">
-              <%= f.text_field :firstname, placeholder: 'First Name', class: "form-control", required: true %>
-            </div>
-            <div class="form-group">
-              <%= f.text_field :lastname, placeholder: 'Last Name', class: "form-control", required: true %>
-            </div>
-            <div class="form-group">
-              <%= f.text_field :country, placeholder: 'Country of Residence', class: "form-control", required: true %>
-            </div>
-            <div class="form-group">
-              <%= f.date_field :dob, class: "form-control", required: true %>
-            </div>
-            <div class="form-group">
-              <%= f.password_field :password, placeholder: 'Password', class: "form-control", required: true %>
-            </div>
-            <%= f.submit "Signup!", class: "ghost-button" %>
+              <div class='userInfo'>
+                  <div class="form-group">
+                    <%= f.email_field :email, placeholder: 'Email', class: "form-control", required: true %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.text_field :firstname, placeholder: 'First Name', class: "form-control", required: true %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.text_field :lastname, placeholder: 'Last Name', class: "form-control", required: true %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.text_field :country, placeholder: 'Country of Residence', class: "form-control", required: true %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.date_field :dob, class: "form-control", required: true %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.password_field :password, placeholder: 'Password', class: "form-control", required: true %>
+                  </div>
+                  <div>
+                    <%= f.submit "Signup!", class: "ghost-button" %>
+                  </div>
+              </div>
             <% end %>
 
     </div>

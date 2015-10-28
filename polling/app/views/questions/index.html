@@ -3,11 +3,11 @@
 
 <div class='container'>
 	<div class="row">
-	  <div class="col-md-4"></div>
-	  <div class="col-md-4">
+	  <div class="col-md-2"></div>
+	  <div class="col-md-8">
 	  	<%= @questions.reverse.each do |q| %>
-	  		<h3><a href='/questions/<%= q.id %>'><%= q.content %></a></h3>
-	  		<p><%= time_ago_in_words(q.created_at) %></p>
+	  		<h2 class='questionTitle'><a href='/questions/<%= q.id %>'><%= q.content %></a></h2>
+	  		<p>Asked about <%= time_ago_in_words(q.created_at) %> ago</p>
 			<ul><% q.question_options.each do |o| %>
 			
 
@@ -25,7 +25,7 @@
 			</ul>
 			<% end %>
 	  </div>
-	  <div class="col-md-4"></div>
+	  <div class="col-md-2"></div>
 	</div>
 </div>
 
