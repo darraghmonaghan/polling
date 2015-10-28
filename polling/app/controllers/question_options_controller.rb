@@ -11,9 +11,9 @@ class QuestionOptionsController < ApplicationController
 	end
 
 	def upvote 
-		  @question_option = QuestionOption.find(params[:format])
-		  @question_option.upvote_by current_user
-		  redirect_to :back
+		@question_option = QuestionOption.find(params[:format])
+		@question_option.upvote_by current_user
+		redirect_to :back
 	end 
 
   private

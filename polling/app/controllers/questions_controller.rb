@@ -18,9 +18,9 @@ class QuestionsController < ApplicationController
 			@question_options.push(t.option)
 		end
 
-		@xyz = []
+		@array_of_arrays = []
 		@question.question_options.each do |t|
-			@xyz.push([t.option, t.get_upvotes.size])
+			@array_of_arrays.push([t.option, t.get_upvotes.size])
 		end
 	end
 
@@ -33,15 +33,19 @@ class QuestionsController < ApplicationController
 	end
 
 	def create
-		# byebug
 		@question = Question.create(question_params)
+		@user = current_user
+		@question.user = User.find(current_user.id)
 		# puts @question
-
-
+		if @question.save
+			redirect_to root_path			
+		else
+			render :create
+		end
 		# question_option = @question.question_option.build
 		# @question_options = QuestionOption.create(answer_option_params)
 		# @question_options.question_id = @question.id
-		redirect_to root_path
+
 	end
 
 	private

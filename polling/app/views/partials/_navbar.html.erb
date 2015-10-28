@@ -17,13 +17,15 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-	      	<li><%= link_to "Home", "/", class: "nav-text" %></li>
+	      	<li class='title'><%= link_to "Home", "/", class: "nav-text" %></li>
 	      	  	<% if current_user %>
-			      	  	<li><span class='glyphicon glyphicon-pencil' aria-hidden="true"><%= link_to "Post a Question", questions_new_path, class: "nav-text" %></span></li>
-			      	    <li><%= link_to "Log Out", sessions_path, method: :delete, class: "nav-text" %></li>
+			      	  	<li class='title'><%= link_to "Post a Question", questions_new_path, class: "nav-text" %></li>
+			      	  	<li class='title'><%= link_to "My Profile", users_profile_path(current_user.id), class: "nav-text" %></li>
+			      	    <li class='title'><%= link_to "Log Out", sessions_path, method: :delete, class: "nav-text" %></li>
 	      	  	<% else %>
-		     			 <li><%= link_to "Post a Question!", "/users/new", class: "nav-text" %></li>
-		     			 <li><%= link_to "Login", sessions_path, method: :get, class: "nav-text" %></li>
+		     			 <li class='title'><%= link_to "Post a Question!", '/users/new', class: "nav-text" %></li>
+		     			 <li class='title'><%= link_to "Sign In", sessions_path, method: :get, class: "nav-text" %></li>
+		     			 <li class='title'><%= link_to "Sign Up", '/users/new', method: :get, class: "nav-text" %></li>
 		      	<% end %>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->

@@ -12,7 +12,11 @@
 		
 				<li>
 					<%= o.option %>
-						<span class='btn btn-default pull-right'>Cast your Vote!<%= link_to upvote_path(o), method: :put do %></span>
+					<%= button_to upvote_path(o), method: :put, :class => 'btn btn-default pull-right' do %>
+
+
+						<!-- <span class='btn btn-default pull-right'></span> -->
+					<%#= o.get_upvotes.size %>
 					<% end %>					
 				</li><br>
 
