@@ -9,20 +9,15 @@
 	  		<h2 class='questionTitle'><a href='/questions/<%= q.id %>'><%= q.content %></a></h2>
 	  		<p>Asked about <%= time_ago_in_words(q.created_at) %> ago</p>
 			<ul><% q.question_options.each do |o| %>
-			
-
-
+		
 				<li>
 					<%= o.option %>
-						<span class='btn btn-default'>Cast your Vote!<%= link_to upvote_path(o), method: :put do %></span><br>
+						<span class='btn btn-default pull-right'>Cast your Vote!<%= link_to upvote_path(o), method: :put do %></span>
 					<% end %>					
-				</li>
-
-
-
+				</li><br>
 
 				<% end %>
-			</ul>
+			</ul><hr>
 			<% end %>
 	  </div>
 	  <div class="col-md-2"></div>
