@@ -1,15 +1,42 @@
-<h1>Question Show Page</h1>
-
 <%= render "partials/navbar" %>
 
 <div class='container'>
 	<div class="row">
 	  <div class="col-md-4"></div>
 	  <div class="col-md-4">
+
+
 			<h5><%= @question.content %></h5>
 			<p><% @question.question_options.each do |o| %>
-				<ul><li><%= o.option %><button class="btn btn-default" type="button">Vote!</button></li></ul>
+
+				<li>
+					<%= o.option %><br>
+					<span class='badge'><%= o.get_upvotes.size %></span>
+					<%= button_to upvote_path(o), method: :put do %>
+					<% end %>					
+				</li>
 				<% end %>
+
+				<p>List of Question Options Here: <%= @question_options %></p>>
+				<p>Array of Options & Votes: <%= @xyz %></p>
+
+
+				<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+				<span class='pull-left'>
+
+				<!-- loop here -->
+					<% @question.question_options.each do |o| %>
+
+					<%= pie_chart [
+					 		[o.option, o.get_upvotes.size],
+					 	] %>
+					 <% end %>
+
+				</span>
+
+
+
+
 
 	  </div>
 	  <div class="col-md-4"></div>

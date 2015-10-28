@@ -12,10 +12,8 @@
 			
 				<li>
 					<%= o.option %><br>
-
 					<span class='badge'><%= o.get_upvotes.size %></span>
 					<%= button_to upvote_path(o), method: :put do %>
-
 					<% end %>					
 				</li>
 				<% end %>

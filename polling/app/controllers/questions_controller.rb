@@ -11,7 +11,17 @@ class QuestionsController < ApplicationController
 	end
 
 	def show
+		@question_options = []
 		@question = Question.find(params[:id])
+
+		@question.question_options.each do |t|
+			@question_options.push(t.option)
+		end
+
+		@xyz = []
+		@question.question_options.each do |t|
+			@xyz.push(t.option, t.get_upvotes.size)
+		end
 	end
 
 	def new
