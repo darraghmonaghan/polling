@@ -23,10 +23,9 @@ class UsersController < ApplicationController
 	      	else
 	        	redirect_to root_path
 	      	end
-
-	    # @user_questions = 
-
 	end
+
+
 
   	def edit
 	      @user = User.find(params[:id])
