@@ -3,40 +3,25 @@
 <div class='container'>
 	<div class="row">
 	  <div class="col-md-4"></div>
-	  <div class="col-md-4">
+	  <div class="col-md-4"> 
 
 
 			<h5><%= @question.content %></h5>
 			<p><% @question.question_options.each do |o| %>
 
 				<li>
-					<%= o.option %><br>
-					<span class='badge'><%= o.get_upvotes.size %></span>
-					<%= button_to upvote_path(o), method: :put do %>
-					<% end %>					
+					<%= o.option %>
+					<span class='badge'><%= o.get_upvotes.size %></span><br>					
 				</li>
 				<% end %>
 
-				<p>List of Question Options Here: <%= @question_options %></p>>
-				<p>Array of Options & Votes: <%= @xyz %></p>
+				<!-- <p>List of Question Options Here: <%= @question_options %></p>
+				<p>Array of Options & Votes: <%= @xyz %></p> -->
+
 
 
 				<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-				<span class='pull-left'>
-
-				<!-- loop here -->
-					<% @question.question_options.each do |o| %>
-
-					<%= pie_chart [
-					 		[o.option, o.get_upvotes.size],
-					 	] %>
-					 <% end %>
-
-				</span>
-
-
-
-
+					<div class='pull-left' width= "500px"><%= pie_chart @xyz, id: 'pieChart', width: "500px"%></div>
 
 	  </div>
 	  <div class="col-md-4"></div>

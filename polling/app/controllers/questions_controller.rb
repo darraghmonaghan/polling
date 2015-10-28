@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
 
 		@xyz = []
 		@question.question_options.each do |t|
-			@xyz.push(t.option, t.get_upvotes.size)
+			@xyz.push([t.option, t.get_upvotes.size])
 		end
 	end
 

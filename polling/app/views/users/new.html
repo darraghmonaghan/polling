@@ -1,13 +1,10 @@
 <%= render "partials/navbar" %>
 
-<h1>New User Page</h1><br>
-
-  <h2>Sign Up Now!</h2>
-
 <div class='container'>
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
+        <h1 class='title'>New User Sign Up</h1><br>
             <%= form_for @user do |f| %> 
             <div class="form-group">
               <%= f.email_field :email, placeholder: 'Email', class: "form-control", required: true %>
