@@ -11,7 +11,7 @@
 	      </button>
 	    </div>
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="/" id='brand'>Quora for Dummies</a>
+	      <a class="navbar-brand" href="/" id='brand'><strong>Quora for Dummies</strong></a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,7 +23,7 @@
 			      	  	<li class='title'><%= link_to "My Profile", users_profile_path(current_user.id), class: "nav-text" %></li>
 			      	    <li class='title'><%= link_to "Log Out", sessions_path, method: :delete, class: "nav-text" %></li>
 	      	  	<% else %>
-		     			 <li class='title'><%= link_to "Post a Question!", '/users/new', class: "nav-text" %></li>
+		     			 <li class='title'><%= link_to "Post a Question", '/users/new', class: "nav-text" %></li>
 		     			 <li class='title'><%= link_to "Sign In", sessions_path, method: :get, class: "nav-text" %></li>
 		     			 <li class='title'><%= link_to "Sign Up", '/users/new', method: :get, class: "nav-text" %></li>
 		      	<% end %>

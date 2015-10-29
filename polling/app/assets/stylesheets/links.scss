@@ -28,7 +28,7 @@
 }
 
 p {
-	font-family: 'Hind', sans-serif;
+	font-family: 'Poiret One', cursive;
 }
 
 .questionContainer {
@@ -36,9 +36,20 @@ p {
 }
 
 #brand {
-	font-family: 'Chewy', cursive;
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+	font: 15px;
 }
 
-#footer {
-	text-align: center;
+.footer {
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.button_to {
+	color: red;
+}
+
+.time {
+	vertical-align: bottom;
 }
