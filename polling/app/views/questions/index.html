@@ -5,26 +5,27 @@
 	<div class="row">
 	  <div class="col-md-2"></div>
 	  <div class="col-md-8">
-	  	<%= @questions.reverse.each do |q| %>
-	  		<h2 class='questionTitle'><a href='/questions/<%= q.id %>'><%= q.content %></a></h2>
-	  		<p>Asked about <%= time_ago_in_words(q.created_at) %> ago</p>
-			<ul><% q.question_options.each do |o| %>
-		
+	  	<% @questions.each do |q| %>
+
+	  		<span class='questionTitle'><a href='/questions/<%= q.id %>'><%= q.content %></a></span>
+	  		<span class='pull-right'>Asked about <%= time_ago_in_words(q.created_at) %> ago</span><br>
+
+			<span class='pull-right'>Vote Now!</span><br>
+
+			<ul>
+				<% q.question_options.each do |o| %>
 				<li>
-					<%= o.option %>
-					<%= button_to upvote_path(o), method: :put, :class => 'btn btn-default pull-right' do %>
+					<span><%= o.option %></span>
+					<span class='pull-right'><%= button_to upvote_path(o), method: :put, :class => 'btn btn-default' do %></span>
 
+					<% end %>	
 
-						<!-- <span class='btn btn-default pull-right'></span> -->
-					<%#= o.get_upvotes.size %>
-					<% end %>					
 				</li><br>
 
 				<% end %>
 			</ul><hr>
-			<% end %>
-	  </div>
-	  <div class="col-md-2"></div>
+		<% end %>
+	  	</div>
 	</div>
 </div>
 

@@ -8,6 +8,8 @@
 
 	  <h1 class='title'>What would you like to ask?</h1>
 
+	  	  <h4 class='title'>You can provide upto 4 answer options...</h4><br>
+
 			<%= form_for @question, url: {action: 'create'} do |f| %>	
 
 				<%= f.hidden_field :user_id, :value => @current_user.id %>

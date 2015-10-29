@@ -5,12 +5,12 @@
 	  <div class="col-md-4"></div>
 	  <div class="col-md-4"> 
 
-			<h5><%= @question.content %></h5>
+			<h2 class='userInfo'><%= @question.content %></h2><br>
 			<p><% @question.question_options.each do |o| %>
 
 				<li>
 					<%= o.option %>
-					<span class='badge'><%= o.get_upvotes.size %></span><br>					
+					<span class='badge pull-right'><%= o.get_upvotes.size %> Votes</span><br>					
 				</li>
 				<% end %>
 

@@ -5,26 +5,29 @@
 	  <div class="col-md-2"></div>
 	  <div class="col-md-8">
 
-	  		<h3 class='userInfo'>Hi there, <%= @user.firstname %>, your questions so far:</h3><br><hr>
+	  		<h3 class='userInfo'>Your questions so far:</h3><br><hr>
 
 	  					<% @user.questions.each do |o| %>
 
-	  						<div class='questionContainer'>
-	  							<h5><a href='/questions/<%= o.id %>'><%= o.content %></a></h5>
-								<p>You posted this about <%= time_ago_in_words(o.created_at) %> ago</p>
-							</div>
+	  						<!-- <div class='questionContainer'> -->
+	  							<span><a href='/questions/<%= o.id %>'><%= o.content %></a></span>
+								<span class='pull-right'>You posted this about <%= time_ago_in_words(o.created_at) %> ago</span>
+							<!-- </div> -->
 
-
-								<p>Question ID: <%= o.id %></p><br>
+								<!-- <p>Question ID: <%= o.id %></p><br> -->
 
 								<%#= o.question_options %>
 
 								<% o.question_options.each do |z| %>
 
-									<li><%= z.option %></li>
+									<li>
+										<span><%= z.option %></span> <span class='badge pull-right'><%= z.get_upvotes.size %> Votes</span>
+										<!-- Need to format the vote count for each -->
+									</li>
 
 								<% end %>	
-								
+
+
 							<!-- TO DO -->
 
 							<!-- Total number of votes cast??? -->
