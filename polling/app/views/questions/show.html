@@ -14,9 +14,6 @@
 				</li>
 				<% end %>
 
-				<!-- <p>List of Question Options Here: <%= @question_options %></p>
-				<p>Array of Options & Votes: <%= @xyz %></p> -->
-
 				<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 					<div class='pull-left' width= "500px"><%= pie_chart @array_of_arrays, id: 'pieChart', width: "500px"%></div>
 

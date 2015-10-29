@@ -9,22 +9,28 @@
 
 	  					<% @user.questions.each do |o| %>
 
-	  						<h5><%= o.content %></h5><br>
-							<p>You posted this about <%= time_ago_in_words(o.created_at) %> ago</p>
+	  						<div class='questionContainer'>
+	  							<h5><a href='/questions/<%= o.id %>'><%= o.content %></a></h5>
+								<p>You posted this about <%= time_ago_in_words(o.created_at) %> ago</p>
+							</div>
 
 
+								<p>Question ID: <%= o.id %></p><br>
+
+								<%#= o.question_options %>
+
+								<% o.question_options.each do |z| %>
+
+									<li><%= z.option %></li>
+
+								<% end %>	
+								
 							<!-- TO DO -->
 
-							<!-- hyperlink each question title -->
 							<!-- Total number of votes cast??? -->
-							<!-- list question optiosn??? -->
 							<!-- Pie charts - likely tricky, need 2 x each loops -->
-							
+
 	  						<hr>
-	  			
-							
-
-
 	  			<% end %>
 	  		
 	  <div class="col-md-2"></div>
