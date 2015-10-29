@@ -11,18 +11,19 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.create(user_params)
-		redirect_to users_profile_path(@user.id)
+		login(@user)
+		redirect_to root_path ## fixed?, use to be directed to profile_path(@user.id)
 	end
 
 
 	def show
 	    # id = params[:id]
 	    @user = User.find(params[:id])
-	      	# if current_user.id == @user.id     
-	      	# 	render :show
-	      	# else
-	       #  	redirect_to root_path
-	      	# end
+	      	if current_user.id == @user.id     
+	      		render :show
+	      	else
+	        	redirect_to root_path
+	      	end
 	end
 
 
