@@ -1,8 +1,6 @@
 
 	  	<% @questions.reverse.each do |q| %>
 
-	  		<h1>WE ARE LOGGED IN NOW </h1>
-
 	  		<span class='questionTitle'><a href='/questions/<%= q.id %>'><strong><%= q.content %></strong></a></span>
 	  		<span class='pull-right time'>Asked about <%= time_ago_in_words(q.created_at) %> ago</span><br>
 
@@ -12,9 +10,12 @@
 				<% q.question_options.each do |o| %>
 				<li>
 					<span><%= o.option %></span>
-					<span class='pull-right'><%= button_to upvote_path(o), method: :put do %></span>
 
-					<% end %>	
+					<%= link_to upvote_path(o), method: :put do %>
+							<button type="button" class="btn btn-info pull-right" aria-label="Left Align">
+					        <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+							</button>
+					<% end %> 
 
 				</li><br>
 
