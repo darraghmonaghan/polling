@@ -5,27 +5,15 @@
 	<div class="row">
 	  <div class="col-md-2"></div>
 	  <div class="col-md-8">
-	  	<% @questions.reverse.each do |q| %>
 
-	  		<span class='questionTitle'><a href='/questions/<%= q.id %>'><strong><%= q.content %></strong></a></span>
-	  		<span class='pull-right time'>Asked about <%= time_ago_in_words(q.created_at) %> ago</span><br>
+			<% if current_user %>                             
+				<%= render "partials/homepageLoggedIn" %>                             
+			<% else %>                             
+				<%= render "partials/homepageNotLoggedIn" %>
 
-			<span class='pull-right'>Vote Now!</span><br>
+			<% end %>
 
-			<ul>
-				<% q.question_options.each do |o| %>
-				<li>
-					<span><%= o.option %></span>
-					<span class='pull-right'><%= button_to upvote_path(o), method: :put do %></span>
-
-					<% end %>	
-
-				</li><br>
-
-				<% end %>
-			</ul><hr>
-		<% end %>
-	  	</div>
+	  </div>
 	</div>
 </div>
 

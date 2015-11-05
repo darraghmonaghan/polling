@@ -1,0 +1,23 @@
+
+	  	<% @questions.reverse.each do |q| %>
+
+	  		<h1>WE ARE LOGGED IN NOW </h1>
+
+	  		<span class='questionTitle'><a href='/questions/<%= q.id %>'><strong><%= q.content %></strong></a></span>
+	  		<span class='pull-right time'>Asked about <%= time_ago_in_words(q.created_at) %> ago</span><br>
+
+			<span class='pull-right'>Vote Now!</span><br>
+
+			<ul>
+				<% q.question_options.each do |o| %>
+				<li>
+					<span><%= o.option %></span>
+					<span class='pull-right'><%= button_to upvote_path(o), method: :put do %></span>
+
+					<% end %>	
+
+				</li><br>
+
+				<% end %>
+			</ul><hr>
+		<% end %>
