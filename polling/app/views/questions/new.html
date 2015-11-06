@@ -3,8 +3,8 @@
 
 <div class='container'>
 	<div class="row">
-	  <div class="col-md-4"></div>
-	  <div class="col-md-4">
+	  <div class="col-md-2"></div>
+	  <div class="col-md-8">
 
 	  <h1 class='title'>What would you like to ask?</h1>
 
@@ -24,10 +24,12 @@
 				    <%= builder.text_field :option, placeholder: 'Answer Option (optional)', class: "form-control" %>
 				  </div>
 				<% end %>
-				<%= f.submit %>
+				
+				<%= f.submit 'Post Your Question', :class => 'btn btn-default'%>
+
 			<% end %>
 	  </div>
-	  <div class="col-md-4"></div>
+	  <div class="col-md-2"></div>
 	</div>
 </div>
 

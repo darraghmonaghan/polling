@@ -1,5 +1,4 @@
 
-
 	  	<% @questions.reverse.each do |q| %>
 
 	  		<span class='questionTitle'><a href='/questions/<%= q.id %>'><strong><%= q.content %></strong></a></span>
@@ -14,7 +13,7 @@
 					<% end %>	
 				</li><br>
 
-				<button type="button" class="btn btn-primary">Sign In to Vote!<a href='/sessions'></a></button>
+				<%= button_to('Sign In to Vote!', sessions_path, :class => 'btn btn-large btn-primary')  %>
 
 			</ul><hr>
 		<% end %>

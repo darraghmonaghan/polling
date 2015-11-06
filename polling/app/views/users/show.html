@@ -15,7 +15,7 @@
 								<% o.question_options.each do |z| %>
 
 									<li>
-										<span><%= z.option %></span> <span class='badge pull-right'><%= z.get_upvotes.size %> Votes</span>
+										<span><%= z.option %></span> <span class='label label-info pull-right'><%= z.get_upvotes.size %> Votes</span>
 										<!-- Need to format the vote count for each -->
 									</li>
 
@@ -23,6 +23,9 @@
 
 	  						<hr>
 	  			<% end %>
+
+
+	  			<!-- <span class="label label-info">Info</span> -->
 	  		
 	  <div class="col-md-2"></div>
 
