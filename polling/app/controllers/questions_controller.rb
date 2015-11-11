@@ -1,30 +1,44 @@
 class QuestionsController < ApplicationController
 
 	def index
-		
 		@all_questions = Question.all
-
+		
+		@unanswered_questions = []
+		@unanswered_questions_id = []
 		@answered_questions = []
+		@voted_qs = []
 
-		@user = current_user
-		# @voted = @user.find_voted_items
-		@user.find_voted_items.each do |a| 
-			@answered_questions.push(a.question_id)
+		### FINDING VOTED QUESTIONS .... @voted_qs[] ###
+
+		if current_user == true					### THINK SOMETHING WRONG WITH CURRENT USER LOGIC FLOW ###
+			@user = current_user
+			@user.id = current_user.id
+			@ABC = @user.find_voted_items
+			puts @ABC
+			@user.find_voted_items.each do |a| 
+				puts a
+				@voted_qs.push(a.question_id)
+			end
 		end
-		# @unanswered_questions = []
 
-		# if current_user == true
-		# 	@user = User.find(params[:id])
-		#@ abc = User.where(:id => @user.id, :voted_for? => false)  ## Query the Question DB instead??
-		# puts @user.find_voted_items
-		# 	# @ABC = User.find(@user)
-		# 	# @DEF = @ABC.find_voted_items
-		# else
-		# 	@questions = Question.all
-		# end
+		### FINDING ANSWERED QUESTIONS .... @answered_questions[] ###
+
+		@all_questions.each do |b|
+			if @voted_qs.include?(b.id) == true
+				@answered_questions.push(b.id)
+			end
+		end
+
+		### FINDING UNANSWERED QUESTIONS .... @unanswered_questions[] ###
+
+		@all_questions.each do |c|
+			if @answered_questions.include?(c.id) == false
+				@unanswered_questions.push(c)
+				@unanswered_questions_id.push(c.id)
+			end
+		end
 
 
-		# @questions = User.where(:voted_for? => false) attempt???
 	end
 
 	def show
