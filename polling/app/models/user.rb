@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 	has_many :user_inputs
 	has_many :links
 
+	acts_as_voter
 
 
 	def self.confirm(params)

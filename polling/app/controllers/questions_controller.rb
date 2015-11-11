@@ -1,7 +1,30 @@
 class QuestionsController < ApplicationController
 
 	def index
-		@questions = Question.all
+		
+		@all_questions = Question.all
+
+		@answered_questions = []
+
+		@user = current_user
+		# @voted = @user.find_voted_items
+		@user.find_voted_items.each do |a| 
+			@answered_questions.push(a.question_id)
+		end
+		# @unanswered_questions = []
+
+		# if current_user == true
+		# 	@user = User.find(params[:id])
+		#@ abc = User.where(:id => @user.id, :voted_for? => false)  ## Query the Question DB instead??
+		# puts @user.find_voted_items
+		# 	# @ABC = User.find(@user)
+		# 	# @DEF = @ABC.find_voted_items
+		# else
+		# 	@questions = Question.all
+		# end
+
+
+		# @questions = User.where(:voted_for? => false) attempt???
 	end
 
 	def show
@@ -41,7 +64,4 @@ class QuestionsController < ApplicationController
 		params.require(:question).permit(:content, :user_id, question_options_attributes: [:option, :_destroy])
 	  end
 
-
 end
-
-
