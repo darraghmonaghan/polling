@@ -18,9 +18,13 @@
 }
 
 .questionTitle {
-	font-size: 25px;
+	font-size: 28px;
 	font-family: 'Poiret One', cursive;
+	color: #00aced;
+}
 
+.questionTitle:hover {
+	color: #0084b4;
 }
 
 .userInfo {
@@ -42,8 +46,9 @@ p {
 }
 
 .footer {
-	horizontal-align: center;
-	vertical-align: center;
+	line-height: 20px;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .button_to {
@@ -52,4 +57,26 @@ p {
 
 .time {
 	vertical-align: bottom;
+}
+
+.color-scheme-A {
+	background-color: #00aced;
+}
+
+.nav-text {
+	color: white;
+}
+
+/*  Hover function on Nav Bar  */
+.title .nav-text:hover {
+	background-color: #0084b4;
+	color: white;
+}
+
+.line-break {
+	color: #0084b4;
+}
+
+.thumb:hover {
+	background-color: #0084b4;
 }
