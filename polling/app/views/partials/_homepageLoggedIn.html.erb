@@ -5,7 +5,7 @@
 		List of Unanswered Q ID's Here:	<%#= @unanswered_questions_id %>	<br> -->
 
 
-	  	<% @unanswered_questions.reverse.each do |q| %>
+	  	<% @all_questions.reverse.each do |q| %>
 
 		  		<span><a href='/questions/<%= q.id %>' class='questionTitle'><strong><%= q.content %></strong></a></span>
 		  		<br>

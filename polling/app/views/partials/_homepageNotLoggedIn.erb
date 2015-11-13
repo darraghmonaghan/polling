@@ -5,8 +5,8 @@
 
 	  		<span class='time'>Asked about <%= time_ago_in_words(q.created_at) %> ago</span><br>
 
-<!-- 	  			<div class="row">
-	  				<div class="col-md-8"> -->
+	  			<div class="row">
+	  				<div class="col-md-8">
 						<ul>
 							<% q.question_options.each do |o| %>
 							<li class='option'>
@@ -15,10 +15,11 @@
 								<% end %>	
 							</li>
 						</ul>
+					</div>
+					<div class='col-md-4'>
+						<%= button_to('Sign In to Vote!', sessions_path, :class => 'btn btn-large color-scheme-A thumb pull-right sign-in')  %><br>
+					</div>	
+				</div>
+					<hr>
 
-							<%= button_to('Sign In to Vote!', sessions_path, :class => 'btn btn-large color-scheme-A thumb pull-right')  %><br>
-
-
-
-			<hr>
-		<% end %>
+			<% end %>
