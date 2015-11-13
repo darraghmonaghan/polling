@@ -1,19 +1,24 @@
 
 	  	<% @all_questions.reverse.each do |q| %>
 
-	  		<span class='questionTitle'><a href='/questions/<%= q.id %>'><strong><%= q.content %></strong></a></span>
+	  		<span><a href='/questions/<%= q.id %>' class='questionTitle'><strong><%= q.content %></strong></a></span><br>
 
-	  		<span class='pull-right time'>Asked about <%= time_ago_in_words(q.created_at) %> ago</span><br>
+	  		<span class='time'>Asked about <%= time_ago_in_words(q.created_at) %> ago</span><br>
 
-			<ul>
-				<% q.question_options.each do |o| %>
-				<li>
-					<span><%= o.option %></span>
+<!-- 	  			<div class="row">
+	  				<div class="col-md-8"> -->
+						<ul>
+							<% q.question_options.each do |o| %>
+							<li class='option'>
+								<span class='option'><%= o.option %></span>
 
-					<% end %>	
-				</li><br>
+								<% end %>	
+							</li>
+						</ul>
 
-				<%= button_to('Sign In to Vote!', sessions_path, :class => 'btn btn-large color-scheme-A thumb')  %>
+							<%= button_to('Sign In to Vote!', sessions_path, :class => 'btn btn-large color-scheme-A thumb pull-right')  %><br>
 
-			</ul><hr>
+
+
+			<hr>
 		<% end %>
