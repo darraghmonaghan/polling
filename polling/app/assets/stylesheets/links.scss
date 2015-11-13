@@ -10,21 +10,23 @@
 
 .userInfo {
 	text-align: center;
+	color: gray;
 }
 
 .title {
 	text-align: center;
 	font-family: 'Poiret One', cursive;
+	color: gray;
 }
 
 .questionTitle {
 	font-size: 28px;
 	font-family: 'Poiret One', cursive;
-	color: #00aced;
+	color: gray;
 }
 
 .questionTitle:hover {
-	color: #0084b4;
+	color: #00aced;
 }
 
 .userInfo {
@@ -51,12 +53,18 @@ p {
 	vertical-align: middle;
 }
 
-.button_to {
+/*.button_to {
 	color: red;
-}
+}*/
 
 .time {
 	vertical-align: bottom;
+	color: #00aced;
+}
+
+.option {
+	color: gray;
+	font-size: 17px;
 }
 
 .color-scheme-A {
@@ -73,10 +81,17 @@ p {
 	color: white;
 }
 
-.line-break {
-	color: #0084b4;
+
+.thumb {
+	color: white;
 }
 
 .thumb:hover {
 	background-color: #0084b4;
+	color: white;
+}
+
+.btn.btn-default:hover {
+	background-color: #00aced;
+	color: white;
 }

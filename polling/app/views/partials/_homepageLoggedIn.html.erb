@@ -1,19 +1,19 @@
 
-		Current User Here:  			<%#= @user.id %>				<br>
-		List of Answered Q's Here:  	<%= @answered_questions %>		<br>
-		List of Voted Q's Here:  		<%= @voted_qs %>				<br>
-		List of Unanswered Q ID's Here:	<%= @unanswered_questions_id %>	<br>
+		<!-- Current User Here:  			<%#= @user.id %>				<br>
+		List of Answered Q's Here:  	<%#= @answered_questions %>		<br>
+		List of Voted Q's Here:  		<%#= @voted_qs %>				<br>
+		List of Unanswered Q ID's Here:	<%#= @unanswered_questions_id %>	<br> -->
 
 
 	  	<% @unanswered_questions.reverse.each do |q| %>
 
-		  		<span class='questionTitle'><a href='/questions/<%= q.id %>' class='questionTitle'><strong><%= q.content %></strong></a></span>
+		  		<span><a href='/questions/<%= q.id %>' class='questionTitle'><strong><%= q.content %></strong></a></span>
 		  		<br>
 		  		<span class='time'>Asked about <%= time_ago_in_words(q.created_at) %> ago</span><br><br>
 
 				<ul>
 					<% q.question_options.each do |o| %>
-					<li>
+					<li class='option'>
 							<span class='option'><%= o.option %></span>
 
 							<%= link_to upvote_path(o), method: :put do %>

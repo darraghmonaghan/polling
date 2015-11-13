@@ -5,17 +5,16 @@
 	  <div class="col-md-2"></div>
 	  <div class="col-md-8">
 
-	  		<h3 class='userInfo'>Your questions so far:</h3><br><hr>
+	  		<h3 class='userInfo'>Your Questions So Far:</h3><br><hr>
 
 	  					<% @user.questions.reverse.each do |o| %>
 
-	  							<span><a href='/questions/<%= o.id %>'><%= o.content %></a></span>
-								<span class='pull-right'>You posted this about <%= time_ago_in_words(o.created_at) %> ago</span>
+	  							<span><a href='/questions/<%= o.id %>' class='questionTitle'><%= o.content %></a></span>
 
 								<% o.question_options.each do |z| %>
 
-									<li>
-										<span><%= z.option %></span> <span class='label label-info pull-right'><%= z.get_upvotes.size %> Votes</span>
+									<li class='option'>
+										<span class='option'><%= z.option %></span> <span class='label label-info pull-right'><%= z.get_upvotes.size %> Votes</span>
 										<!-- Need to format the vote count for each -->
 									</li>
 

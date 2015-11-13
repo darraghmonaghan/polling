@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <h1 class='title'>New User Sign Up</h1><br>
+        <h1 class='title'>Sign Up</h1><br>
             <%= form_for @user do |f| %> 
               <div class='userInfo'>
                   <div class="form-group">
@@ -26,7 +26,7 @@
                     <%= f.password_field :password, placeholder: 'Password', class: "form-control", required: true %>
                   </div>
                   <div>
-                    <%= f.submit "Signup!", class: "ghost-button" %>
+                    <%= f.submit "Sign Up!", :class => 'btn btn-default'%>
                   </div><br>
                   <a href="/sessions">Already have an account? Login Now!</a>
               </div>
