@@ -1,6 +1,6 @@
 
 Intro to Polling (Consumer facing name: 'Quora For Dummies'):
-A Question & Answer platform that allows a user to seamlessly pose a question to the entire spectrum of visitors to the site
+- A Question & Answer platform that allows a user to seamlessly pose a question to the entire spectrum of visitors to the site
 
 Technologies:
 - Built using Ruby on Rails, with Twitter Bootstrap for frontend, and PostgreSQL for database functionality. Chart.JS was used for the graphical visualization built
@@ -12,7 +12,7 @@ List of Developers:
 - Darragh Monaghan
 
 Contact Info:
-For further information, to report bugs, or to submit new feature requests, please email: monaghan.darragh@gmail.com
+- For further information, to report bugs, or to submit new feature requests, please email: monaghan.darragh@gmail.com
 
 
 
