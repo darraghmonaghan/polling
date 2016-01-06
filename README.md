@@ -1,5 +1,5 @@
 
-Intro:
+Intro to Polling (Consumer facing name: 'Quora For Dummies'):
 A Question & Answer platform that allows a user to seamlessly pose a question to the entire spectrum of visitors to the site
 
 Technologies:
